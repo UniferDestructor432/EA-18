@@ -24,7 +24,7 @@ const Home: React.FC = () => {
     }
 
     try{
-      await addDoc(collection(db, "productos"), {
+      await addDoc(collection(db, 'productos'), {
         nombre,
         descripcion,
         categoria,
@@ -42,8 +42,11 @@ const Home: React.FC = () => {
 
       // Limpiar formulario
       setNombre('');
-      setCodigo('');
+      setCategoria('');
+      setDescripcion('');
       setCantidad(0);
+      setPrecio(0);
+      setCodigo('');
     }catch(error){
       console.error("Error al guardar");
       present("Error al guardar en la base de datos", 2000);
